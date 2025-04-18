@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <time.h>
+#include <windows.h>
 int check_win(char board[3][3]){
 
 for(int i = 0; i < 3; i++){    
@@ -45,7 +46,7 @@ int game(char pick, int row, int col, char board[3][3]){
 
     if(board[row][col] == 'X' || board[row][col] == 'O'){
         printf("This spot is occupied! by %c\n", board[row][col]);
-        return 1;
+        return 4;
     }
     board[row][col] = pick;
     draw_board(board);
@@ -70,7 +71,7 @@ int game(char pick, int row, int col, char board[3][3]){
 int main() {
     char pick;
     int row = 0, col = 0, WON = 24;
-        char board[3][3] = {
+    char board[3][3] = {
     {' ',' ',' '},
     {' ',' ',' '},
     {' ',' ',' '}
